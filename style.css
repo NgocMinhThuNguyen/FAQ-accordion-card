@@ -10,13 +10,14 @@
   --light-grayish-blue: hsl(240, 5%, 91%);
 }
 
+/* GENERAL SETTING */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-:where(body, section) {
+:where(body, main, section, dl, dt) {
   display: flex;
   flex-direction: column;
 }
@@ -26,37 +27,128 @@ body {
   background: var(--soft-violet);
   align-items: center;
   justify-content: center;
+  gap: 1rem;
   font-family: 'Kumbh Sans', sans-serif;
   font-size: .75rem;
 }
 
+/* MAIN */
 main {
+  width: 345px;
+  max-height: 600px;
   background-color: white;
-  margin: auto 1rem;
+  margin-top: 5rem;
   border-radius: .75rem;
   position: relative;
+  background-image: url(images/bg-pattern-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center 10px;
+}
+
+picture img {
+  width: 80%;
+  position: absolute;
+  top: -120px;
+  left: 35px;
 }
 
 section {
   padding: 1rem 2rem;
   gap: 2rem;
-  margin-top: 7rem;
-}
-
-.illustration .iii {
-  width: 70%;
-  position: absolute;
-  top: -20%;
-  left: 15%;
-}
-.illustration .background {
-  position: absolute;
-  top: 0;
-  left: 15%;
+  margin-top: 9rem;
 }
 
 h1 {
   text-align: center;
   font-size: 2rem;
   color: var(--very-dark-desaturated-blue);
+}
+
+/* FAQ (BEFORE SHOWING ANSWERS) */
+
+ dl {
+  gap: 1rem;
+}
+
+.hidden-answer {
+  padding-bottom: 1rem;
+  border-bottom: .07rem solid var(--light-grayish-blue);
+}
+
+.hidden-answer dt {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hidden-answer dd {
+  color: var(--dark-grayish-blue);
+  margin-top: .5rem;
+  max-width: 327px;
+  display: none;
+}
+
+.hidden-answer dt:hover {
+  cursor: pointer;
+  color: var(--soft-red);
+}
+
+/* FAQ (AFTER SHOWING ANSWERS) */
+.show-answer dt {
+  color: var(--very-dark-desaturated-blue);
+  font-weight: 700;
+}
+
+.show-answer img {
+  transform: rotate(180deg);
+}
+
+.show-answer dd {
+  display: block;
+}
+
+footer {
+  color: var(--very-dark-desaturated-blue);
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--light-grayish-blue);
+}
+
+/* DESKTOP */
+@media (min-width: 1023px) {
+  body {
+    font-size: 1rem;
+  }
+
+  main {
+    width: 900px;
+    height: 500px;
+    margin-top: 0;
+    flex-direction: row;
+    gap: 30rem;
+    background-image: url('images/bg-pattern-desktop.svg');
+    background-position: -200% 50%;
+  }
+
+  section {
+    margin-top: 5rem;
+    padding: 0;
+  }
+
+  h1 {
+    text-align: left;
+  }
+
+  .hidden-answer dt {
+    gap: 2rem;
+  }
+
+  picture img {
+    width: 50%;
+    left: -100px;
+    top: 120px;
+  }
 }
