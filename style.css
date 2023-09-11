@@ -1,5 +1,7 @@
+/* IMPORTING FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
 
+/* VARIABLE DECLARATION */
 :root {
   --very-dark-desaturated-blue: hsl(238, 29%, 16%);
   --soft-red: hsl(14, 88%, 65%);
@@ -10,7 +12,7 @@
   --light-grayish-blue: hsl(240, 5%, 91%);
 }
 
-/* GENERAL SETTING */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -22,9 +24,10 @@
   flex-direction: column;
 }
 
+/* BODY SECTION */
 body {
   min-height: 100vh;
-  background: var(--soft-violet);
+  background: linear-gradient(180deg, var(--soft-violet), var(--soft-blue));
   align-items: center;
   justify-content: center;
   gap: 1rem;
@@ -32,15 +35,15 @@ body {
   font-size: .75rem;
 }
 
-/* MAIN */
+/* MAIN SECTION */
 main {
   width: 345px;
   max-height: 600px;
   background-color: white;
   margin-top: 5rem;
   border-radius: .75rem;
-  position: relative;
-  background-image: url(images/bg-pattern-mobile.svg);
+  position: absolute;
+  background-image: url('images/bg-pattern-mobile.svg');
   background-repeat: no-repeat;
   background-size: 80%;
   background-position: center 10px;
@@ -129,8 +132,9 @@ footer a {
     margin-top: 0;
     flex-direction: row;
     gap: 30rem;
-    background-image: url('images/bg-pattern-desktop.svg');
-    background-position: -200% 50%;
+    background-image: url('images/illustration-woman-online-desktop.svg'), url('images/bg-pattern-desktop.svg');
+    background-size: 50%, 90%;
+    background-position: -10% 70%, -450% 60%;
   }
 
   section {
@@ -147,8 +151,8 @@ footer a {
   }
 
   picture img {
-    width: 50%;
-    left: -100px;
-    top: 120px;
+    width: 20%;
+    top: 45%;
+    left: -10%;
   }
 }
